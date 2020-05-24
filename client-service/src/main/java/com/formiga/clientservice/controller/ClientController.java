@@ -3,11 +3,13 @@ package com.formiga.clientservice.controller;
 import com.formiga.clientservice.model.Client;
 import com.formiga.clientservice.repository.ClientRepository;
 import com.formiga.clientservice.utils.ClientNotFoundException;
+import com.netflix.discovery.converters.Auto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -19,7 +21,17 @@ public class ClientController {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
+    private RestTemplate restTemplate;
+
+    @Autowired
     private ClientRepository repository;
+
+    @GetMapping("/test")
+    public String teste() {
+
+        String result = this.restTemplate.getForObject("http://CIDADE-SERVICE/cidades/1", String.class);
+        return result;
+    }
 
     @GetMapping("/clients/{id}")
     public Client findById(@PathVariable Long id) {

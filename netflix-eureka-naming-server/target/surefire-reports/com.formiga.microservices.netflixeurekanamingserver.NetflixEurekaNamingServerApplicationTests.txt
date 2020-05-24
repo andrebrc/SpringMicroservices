@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.formiga.microservices.netflixeurekanamingserver.NetflixEurekaNamingServerApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.13 s - in com.formiga.microservices.netflixeurekanamingserver.NetflixEurekaNamingServerApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.536 s - in com.formiga.microservices.netflixeurekanamingserver.NetflixEurekaNamingServerApplicationTests

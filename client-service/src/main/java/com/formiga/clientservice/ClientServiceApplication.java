@@ -1,24 +1,16 @@
 package com.formiga.clientservice;
 
-import com.formiga.clientservice.model.Cidade;
-import com.formiga.clientservice.model.Client;
-import com.formiga.clientservice.model.SexoEnum;
-import com.formiga.clientservice.repository.ClientRepository;
-import com.formiga.clientservice.utils.ClientBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
-
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@EnableEurekaClient
 public class ClientServiceApplication {
 
     private static final Logger log =
@@ -26,6 +18,12 @@ public class ClientServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ClientServiceApplication.class, args);
+    }
+
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 
 //    @Bean
