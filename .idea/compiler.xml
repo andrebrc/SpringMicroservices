@@ -9,6 +9,7 @@
         <module name="netflix-zuul-api-gateway-server" />
         <module name="client-service" />
         <module name="netflix-eureka-naming-server" />
+        <module name="cidade-service" />
         <module name="currency-conversion-service" />
         <module name="cliente-service" />
         <module name="currency-exchange-service" />
@@ -17,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cidade-service" target="1.8" />
       <module name="client-service" target="1.8" />
       <module name="cliente-service" target="1.8" />
       <module name="currency-conversion-service" target="1.8" />
@@ -29,6 +31,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cidade-service" options="-parameters" />
       <module name="client-service" options="-parameters" />
       <module name="cliente-service" options="-parameters" />
       <module name="currency-conversion-service" options="-parameters" />
