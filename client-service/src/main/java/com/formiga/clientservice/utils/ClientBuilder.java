@@ -1,6 +1,5 @@
 package com.formiga.clientservice.utils;
 
-import com.formiga.clientservice.model.Cidade;
 import com.formiga.clientservice.model.Client;
 import com.formiga.clientservice.model.SexoEnum;
 import java.time.LocalDate;
@@ -12,7 +11,7 @@ public class ClientBuilder {
     private String nome = "";
     private SexoEnum sexo = null;
     private LocalDate dataNascimento;
-    private Cidade cidade;
+    private Long idCidade;
 
 
     public ClientBuilder setId(Long id) {
@@ -35,14 +34,13 @@ public class ClientBuilder {
         return this;
     }
 
-
-    public ClientBuilder setCidade(Cidade cidade) {
-        this.cidade = cidade;
+    public ClientBuilder setIdCidade(Long idCidade) {
+        this.idCidade = idCidade;
         return this;
     }
 
     public Client build() {
-        return new Client(nome, sexo, this.dataNascimento, this.cidade);
+        return new Client(nome, sexo, this.dataNascimento, this.idCidade);
     }
 
 }

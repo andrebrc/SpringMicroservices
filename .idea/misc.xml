@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/client-service/pom.xml" />
         <option value="$PROJECT_DIR$/cidade-service/pom.xml" />
+        <option value="$PROJECT_DIR$/netflix-hystrix-server/pom.xml" />
+        <option value="$PROJECT_DIR$/zuul/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

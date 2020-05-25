@@ -4,12 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cidade-service/cidade-service.iml" filepath="$PROJECT_DIR$/cidade-service/cidade-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/client-service/client-service.iml" filepath="$PROJECT_DIR$/client-service/client-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/currency-conversion-service/currency-conversion-service.iml" filepath="$PROJECT_DIR$/currency-conversion-service/currency-conversion-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/currency-exchange-service/currency-exchange-service.iml" filepath="$PROJECT_DIR$/currency-exchange-service/currency-exchange-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/limits-service/limits-service.iml" filepath="$PROJECT_DIR$/limits-service/limits-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" filepath="$PROJECT_DIR$/netflix-eureka-naming-server/netflix-eureka-naming-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netflix-hystrix-server/netflix-hystrix-server.iml" filepath="$PROJECT_DIR$/netflix-hystrix-server/netflix-hystrix-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/netflix-zuul-api-gateway-server/netflix-zuul-api-gateway-server.iml" filepath="$PROJECT_DIR$/netflix-zuul-api-gateway-server/netflix-zuul-api-gateway-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" filepath="$PROJECT_DIR$/spring-cloud-config-server/spring-cloud-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>
   </component>
 </project>

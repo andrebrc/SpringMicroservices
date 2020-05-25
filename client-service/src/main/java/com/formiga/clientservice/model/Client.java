@@ -1,5 +1,7 @@
 package com.formiga.clientservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,8 @@ public class Client {
     @Column(name = "data_nascimento", columnDefinition = "DATE")
     private LocalDate dataNascimento;
 
+    private Long idCidade;
+
     @Transient
     private Cidade cidade;
 
@@ -32,11 +36,11 @@ public class Client {
             String nome,
             SexoEnum sexo,
             LocalDate dataNascimento,
-            Cidade cidade) {
+            Long idCidade) {
         this.nome = nome;
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
-        this.cidade = cidade;
+        this.idCidade = idCidade;
     }
 
 
@@ -73,6 +77,14 @@ public class Client {
         this.dataNascimento = dataNascimento;
     }
 
+    public Long getIdCidade() {
+        return idCidade;
+    }
+
+    public void setIdCidade(Long idCidade) {
+        this.idCidade = idCidade;
+    }
+
     public Cidade getCidade() {
         return cidade;
     }
@@ -93,7 +105,7 @@ public class Client {
                 ", nome='" + nome + '\'' +
                 ", sexo=" + sexo +
                 ", dataNascimento=" + dataNascimento +
-                ", cidade=" + cidade +
+                ", idCidade=" + idCidade +
                 '}';
     }
 }
