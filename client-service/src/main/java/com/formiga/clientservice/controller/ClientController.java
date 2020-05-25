@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.annotation.security.RolesAllowed;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
@@ -42,6 +43,8 @@ public class ClientController {
         return result;
     }
 
+
+//    @RolesAllowed("user")
     @GetMapping("/clients/{id}")
     public Client findById(@PathVariable Long id) {
         Optional<Client> byId = repository.findById(id);
@@ -56,6 +59,7 @@ public class ClientController {
     }
 
 
+//    @RolesAllowed("user")
     @GetMapping("/clients")
     public List<Client> findByName(@RequestParam(name = "nome", required = true) String nome) {
         List<Client> byNome = repository.findByNome(nome);
@@ -71,6 +75,7 @@ public class ClientController {
     }
 
 
+//    @RolesAllowed("user")
     @PostMapping("/clients")
     public ResponseEntity<?> createClient(@RequestBody Client client) {
         log.info("Client to save:" + client.toString());
@@ -80,6 +85,7 @@ public class ClientController {
         return ResponseEntity.created(location).build();
     }
 
+//    @RolesAllowed("user")
     @DeleteMapping("/clients/{id}")
     public void deleteUser(@PathVariable long id) {
         Optional<Client> byId = repository.findById(id);
@@ -90,6 +96,7 @@ public class ClientController {
         }
     }
 
+//    @RolesAllowed("user")
     @PatchMapping("/clients/{id}")
     public ResponseEntity<?> partialUpdateName(
             @RequestBody Client client, @PathVariable Long id

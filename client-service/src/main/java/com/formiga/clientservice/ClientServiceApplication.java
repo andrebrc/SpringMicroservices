@@ -17,10 +17,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -41,39 +37,39 @@ public class ClientServiceApplication {
         return new RestTemplate();
     }
 
-    @Bean
-    public CommandLineRunner setInitialData(ClientRepository repository) {
-        return (args) -> {
-            log.info("Save client pedro");
-            Client pedro = new ClientBuilder()
-                    .setNome("Pedro")
-                    .setSexo(SexoEnum.MASCULINO)
-                    .setDataNascimento(LocalDate.now())
-                    .setIdCidade(1L)
-                    .build();
-
-            Client joao = new ClientBuilder()
-                    .setNome("João")
-                    .setSexo(SexoEnum.MASCULINO)
-                    .setDataNascimento(LocalDate.now())
-                    .setIdCidade(2L).build();
-            log.info("Client pedro saved");
-            List<Client> clients = Arrays.asList(pedro, joao);
-
-            repository.saveAll(clients);
-
-            List<Client> pedrosResult = repository.findByNome("Pedro");
-            log.info("FindByName: " + pedrosResult.toString());
-
-            Optional<Client> byId = repository.findById(1L);
-            log.info("FindById: " + byId.get().getId());
-
-            Iterable<Client> all = repository.findAll();
-
-            all.forEach(i -> {
-                log.info("id: " + i.getId());
-                log.info("name: " + i.getNome());
-            });
-        };
-    }
+//    @Bean
+//    public CommandLineRunner setInitialData(ClientRepository repository) {
+//        return (args) -> {
+//            log.info("Save client pedro");
+//            Client pedro = new ClientBuilder()
+//                    .setNome("Pedro")
+//                    .setSexo(SexoEnum.MASCULINO)
+//                    .setDataNascimento(LocalDate.now())
+//                    .setIdCidade(1L)
+//                    .build();
+//
+//            Client joao = new ClientBuilder()
+//                    .setNome("João")
+//                    .setSexo(SexoEnum.MASCULINO)
+//                    .setDataNascimento(LocalDate.now())
+//                    .setIdCidade(2L).build();
+//            log.info("Client pedro saved");
+//            List<Client> clients = Arrays.asList(pedro, joao);
+//
+//            repository.saveAll(clients);
+//
+//            List<Client> pedrosResult = repository.findByNome("Pedro");
+//            log.info("FindByName: " + pedrosResult.toString());
+//
+//            Optional<Client> byId = repository.findById(1L);
+//            log.info("FindById: " + byId.get().getId());
+//
+//            Iterable<Client> all = repository.findAll();
+//
+//            all.forEach(i -> {
+//                log.info("id: " + i.getId());
+//                log.info("name: " + i.getNome());
+//            });
+//        };
+//    }
 }

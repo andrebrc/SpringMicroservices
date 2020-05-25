@@ -12,6 +12,8 @@
     <file url="file://$PROJECT_DIR$/netflix-zuul-api-gateway-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-config-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul/src/main/resources" charset="UTF-8" />
   </component>
