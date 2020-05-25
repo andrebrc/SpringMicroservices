@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "a45d001c-828d-41f1-b438-4eb623de4572",
+		"name": "SpringBootDesafio",
+		"description": "Collections to SpringBoot MicroservicesProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "FindClientById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVXzg1QTlWWFM1WjNJNk1xZXBBYmF1YTFuTl9INHMxS3R6anVmU1Z6UGxRIn0.eyJleHAiOjE1OTA0MDgwOTcsImlhdCI6MTU5MDQwNzc5NywianRpIjoiOGMyYWFhNjQtZWNhZC00ODliLTkwMDktMGY2MzBjZDZmN2MxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL3NwcmluZy16dXVsLWF1dGgiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMzFiMDIyYTktNjUwNi00ZGRjLWE4M2UtOGVkOGM4ZDYwOWM2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoienV1bC1leGFtcGxlIiwic2Vzc2lvbl9zdGF0ZSI6ImUyZDhkZDlhLWNlODQtNGQ3ZS04YzQ5LTU5ZGU5Y2QxODBmOCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiYXBwLXVzZXIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJ6dXVsLWV4YW1wbGUiOnsicm9sZXMiOlsidXNlciJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InRlc3RlIn0.PIAv42q3ZyqRfbRkdUMACpqrmflHaGW33ANyXI3Qk2aslESvyx5R7s1tYiEIHQa771wRi-gRrMbfb1IQHGiMZnXSlOaVU8_AbToBiV7knRknx2YDPwhtkfaVrB4uQyb6rQqoQSYTE6TesDUGr0pmUY0L9gHA9SlLduUOCNKxmJQDOFmduSvGhFD3VdCAoQuvHU3n4fskQJ1woHX6ekqiqcbypBMYRoj9fQO5awk_BhX5mMKqPYTFip91wPRzzVv4I8ufdVJgx9XCqw-DD6FY9uHGP7al25j47auBrUdgM_wGK8m76Aou7p68wQXQwKTOnrC85qj4SgcNKknbsYu3aw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8766/client-service/clients/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"client-service",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindClientByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8766/client-service/clients?nome=Ralfs12",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"client-service",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Ralfs12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveClient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"nome\": \"localhost:8766/client-service/\",\n\"idCidade\": 1,\n\"sexo\": \"MASCULINO\",\n\"dataNascimento\": \"2020-01-01\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8766/client-service/clients",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"client-service",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateClientName",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"nome\": \"Maria2\"\n\n}"
+						},
+						"url": {
+							"raw": "localhost:8766/client-service/clients/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"client-service",
+								"clients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8766/client-service/clients/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"client-service",
+								"clients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cidade",
+			"item": [
+				{
+					"name": "FindCidadeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8766/cidade-service/cidades/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"cidade-service",
+								"cidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindCidadeByNameOrUF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8766/cidade-service/cidades?uf=ma",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"cidade-service",
+								"cidades"
+							],
+							"query": [
+								{
+									"key": "uf",
+									"value": "ma"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveCidade",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Alta Floresta\",\n\t\"uf\": \"MT\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8766/cidade-service/cidades",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"cidade-service",
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEnvExample",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8766/cidade-service/port",
+							"host": [
+								"localhost"
+							],
+							"port": "8766",
+							"path": [
+								"cidade-service",
+								"port"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "SpringConfig",
+			"item": [
+				{
+					"name": "FindPropertiesExample",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8888/cidade-service.properties",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"cidade-service.properties"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "getToken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "zuul-example",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "e0788bdc-0f04-46ab-923b-fd35ed0f2a2c",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "teste",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/realms/spring-zuul-auth/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"realms",
+								"spring-zuul-auth",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

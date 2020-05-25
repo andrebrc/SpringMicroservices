@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import static org.mockito.BDDMockito.*;
 
 import org.keycloak.adapters.springboot.KeycloakAutoConfiguration;
+import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
+import org.keycloak.adapters.springsecurity.KeycloakSecurityComponents;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,7 +20,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration;
 import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 import org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.MediaType;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
@@ -33,6 +37,10 @@ import java.util.Optional;
         KeycloakAutoConfiguration.class,
         FeignRibbonClientAutoConfiguration.class,
         FeignAutoConfiguration.class})
+@ComponentScan(basePackageClasses = {
+        KeycloakSecurityComponents.class,
+        KeycloakSpringBootConfigResolver.class
+})
 public class ClientControllerTest {
 
     @Autowired
