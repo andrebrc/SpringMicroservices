@@ -24,4 +24,12 @@
 
 * Importar o arquivo Spring.postman_collection.json
 
+### TODO
 
+- [ ] Criar DTO para expor os objetos da forma adequada 
+- [ ] Subir autenticação para a camada do zuul
+- [ ] Criar o Dockerfile para cada projeto
+- [ ] Configurar o Hystrix
+- [ ] Configurar o Zipkin
+- [ ] Documentação
+- [ ] Corrigir os testes
